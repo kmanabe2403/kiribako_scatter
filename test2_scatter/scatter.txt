@@ -1,0 +1,85 @@
+scatter1.cpp        点の座標を表示するプログラム
+scatter2.cpp        点と点の方向に直線を引くプログラム
+scatter3.cpp        直線の終点から補助線を引くプログラム
+scatter6.cpp        いい感じに、測定1回ぶんの線を引くプログラム
+scatter7.cpp        6とほぼ変わりなし、色とか太さを線ごとに変えれるようにした
+scatter8.cpp        角度thetaとpsiを1回測定できるようにした
+scatter9.cpp        なんかずれてたのを直した
+scatter10.cpp       向きをキーで指定できるようにした、なんかいいかんじのガイドライン出すようにした
+scatter11.cpp       measure3に追加で、phiを3ヶ所で測れるようにした(4分割lineを引く)
+scatter12.cpp       次に打つ点の上のガイドラインを青く表示、点を打ち終わったらグレーで消すようにした
+scatter13.cpp       1回の測定につき、phiのrmsと標準偏差を出力するようにしたい
+scatter_20cm.cpp    20cm測れるようにしたい
+scatter14.cpp       20cmを元に、xの長さをcmでも表示できるようにする。betaやbeta gammaを計算する
+scatter15.cpp       psi1とかの文字列のリセットができてないのを直した、文字の大きさ調整
+scatter16.cpp       line2の補助線を上下に伸ばす、line2の長さ目安のメモリを表示
+scatter17.cpp       line2の長さ(x_length)を選択できるようにする
+scatter18_pre.cpp   (psiの測定を簡単に増やせるように、)コードを整理した、文字の列の高さも簡単に変えれるようにした。
+scatter18.cpp       なぜか文字が消えたのを直す、x_length選ぶときの補助線を追加した
+scatter19.cpp       phi_rmsの計算とか、betaの計算とかをできるようにする。psi->phi
+scatter20.cpp       拡大・縮小でいろいろやってた
+scatter21.cpp
+scatter22.cpp
+scatter23.cpp
+scatter24.cpp       うまく拡大・縮小、移動の調整はできた
+scatter25.cpp       拡大・縮小、移動と、scatter19.cppまでのat_clickを合体させた(なんか変になる...)
+」ここまでok
+scatter26.cpp       なんか変になってるの直したい、
+scatter27.cpp       角度計算、beta計算直そう。選べるx_lengthを増やそう
+->measure5.cppにする？いまとりあえず使いやすい用に
+scatter24.cpp       多測定に適応して補助線を消すとか、点の大きさ調整
+scatter25.cpp       x_lengthと、刻み数と、点の座標と、測った角度と、rmsとかを.txtか何かに記録して残せるようにする
+->measure6.cppにする？多測定用に
+->縦軸x2、横軸phiでいろいろプロットしてみる
+->どのくらいphiがx2で変わるのか見る、最適なx2を探す
+Githubに入れておく
+
+
+
+クリックした点の座標の重心座標を計算する？？
+霧箱に使いやすい式を考える？？->click.cppで使う
+電磁石で電子線のエネルギー選別
+
+
+
+
+
+scatter20.cpp   角度の位置に扇形を描写するとか...(やっぱ無し)
+scatter23.cpp   ちょっと間違えたときに1手戻るとかいう操作を追加したい(まああったら便利)
+scatter20.cpp   1飛跡終了、のキーを押したら、1飛跡の測定のtheta, phiのrmsと標準偏差、beta, beta gammaをまとめて出力できるようにしたい(やっぱ無し)
+scatter25.cpp   次の飛跡の描画中は、前の飛跡の線を消すとか...(やっぱ無し、1画像1飛跡にしよう)
+」あとは下の疑問を解決しよう
+
+
+・Githubに入れとく？
+
+疑問いろいろ
+・betaが負になる...？
+・theta, phiの計算合ってるのか？
+・psi_rmsの計算合ってるのか？
+・角度が負になったときにどうするべきかを確認する
+
+
+
+
+
+今後やりたいこと：
+１．thetaを測るのはむずかしい？
+　　任意の飛跡について、点を何個か打って、線を引いて傾きを出すプログラムを書く
+    もとの手の測定と同じ測定を、プログラムでやる
+    そこから、betaを求め、beta gammaを求める
+」ok
+
+２．thetaを、phiから測る
+　　有賀先生の式の通り、任意の点(今回は真ん中にしよう)を使って、phiからthetaを求める
+    そこから、betaと、beta gammaを求める
+」ok
+
+３．thetaを何点も求めてみる
+    飛跡を何分割かして、１と同じことをして、theta_rmsを求める
+    向きが変わったときに対応できるようにしていないといけない
+」たぶんok？？
+
+４．phiを何点も求めてみる
+　　２を、同じ飛跡について複数ヶ所で測って、phi_rmsを求める
+」たぶんok？？

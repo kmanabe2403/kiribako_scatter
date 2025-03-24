@@ -1,0 +1,28 @@
+import numpy as np
+from scipy.optimize import fsolve
+
+
+def f1(beta):
+    mc2 = 105.66
+    z = 1
+    X0 = 30050
+    return 13.6/mc2 * np.sqrt(1-beta*beta) / beta / beta * z * np.sqrt(x/X0) * (1 + 0.038*np.log(x*z*z/(X0*beta*beta))) - theta
+
+def f2(bpc):
+    beta = 1.0
+    z = 1
+    X0 = 30050
+    return 13.6/ bpc * z * np.sqrt(x/X0) * (1.0 + 0.038*np.log(x*z*z/(X0*beta*beta))) - theta
+
+
+x = 5
+theta = 0.3*2*np.pi/360
+
+initial_guess = 0.1 
+beta_ans = fsolve(f1, initial_guess)
+bpc_ans = fsolve(f2, initial_guess)
+print(beta_ans[0])
+print(bpc_ans[0])
+
+pb_ele_mc = (beta_ans[0]/np.sqrt(1-beta_ans[0]*beta_ans[0]))
+print(pb_ele_mc)
